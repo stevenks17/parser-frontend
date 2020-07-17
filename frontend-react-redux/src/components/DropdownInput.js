@@ -26,7 +26,7 @@ class DropdownInput extends Component {
         // during page load fetch request is grabbing all graphs in database and adding them to graph array
         componentDidMount(){
             
-            fetch("http://localhost:3001/graphs")
+            fetch("https://parser-backend-api.herokuapp.com/graphs")
             .then(response => response.json())
             .then(graphs => {
                 
@@ -54,8 +54,8 @@ class DropdownInput extends Component {
 
                 // changing state to remove already added graphs to dashboard
                 this.setState({
-                    graphs: this.state.graphs.filter(graph => this.state.graph_url !== `http://localhost:3001/graphs/${graph.id}`),
-                    loadedGraphs: this.state.graphs.filter(graph => this.state.graph_url === `http://localhost:3001/graphs/${graph.id}`)
+                    graphs: this.state.graphs.filter(graph => this.state.graph_url !== `https://parser-backend-api.herokuapp.com/graphs/${graph.id}`),
+                    loadedGraphs: this.state.graphs.filter(graph => this.state.graph_url === `https://parser-backend-api.herokuapp.com/graphs/${graph.id}`)
                 })
             } else {
                 return "Choose your data source to add to dashboard for comparison"
@@ -83,7 +83,7 @@ class DropdownInput extends Component {
                     <Form.Control as="select" size="lg" value={this.state.graph_url} onChange={event => this.handleDropdownChange(event)}>
                         {/* options dynamically populated by iteration of this.state.graphs */}
                         <option value="" >Choose a Graph to load to the dashboard</option>
-                        {this.state.graphs.map(graph => <option value={`http://localhost:3001/graphs/${graph.id}`} key={graph.id}>{graph.name}</option>)}
+                        {this.state.graphs.map(graph => <option value={`https://parser-backend-api.herokuapp.com/graphs/${graph.id}`} key={graph.id}>{graph.name}</option>)}
                     </Form.Control>
                 </Form.Group>
 

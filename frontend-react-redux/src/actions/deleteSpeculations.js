@@ -15,7 +15,7 @@ export const deleteNote = (graph_id, note_id) => {
         }
 
         /// interpolation of graphID and note_id into fetch to delete correct objects
-        fetch(`http://localhost:3001/graphs/${graphID}/notes/${note_id}`, dispatchData)
+        fetch(`https://parser-backend-api.herokuapp.com/graphs/${graphID}/notes/${note_id}`, dispatchData)
         .then(response=> response.json())
         .then(json => {
             dispatch({type: 'DELETE_NOTE', note_id})
@@ -46,7 +46,7 @@ export const deleteQuestion = (graph_id, question_id) => {
         }
 
         /// interpolation of graphID and question_id into fetch to delete correct objects
-        fetch(`http://localhost:3001/graphs/${graphID}/questions/${question_id}`, dispatchData)
+        fetch(`https://parser-backend-api.herokuapp.com/graphs/${graphID}/questions/${question_id}`, dispatchData)
         .then(response=> response.json())
         .then(json => {
             dispatch({type: 'DELETE_QUESTION', question_id})

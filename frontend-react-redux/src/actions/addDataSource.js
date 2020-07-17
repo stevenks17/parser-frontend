@@ -14,7 +14,7 @@ export const addDataSource = (dataSource) => {
             body: JSON.stringify(dataSource)
         };
 
-        fetch(`http://localhost:3001/graphs`, dispatchData)
+        fetch(`https://parser-backend-api.herokuapp.com/graphs`, dispatchData)
         .then(function(response) {
             return response.json()
         })

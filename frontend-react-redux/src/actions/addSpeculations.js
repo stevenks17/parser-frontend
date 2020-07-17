@@ -14,7 +14,7 @@ export const addNote = (note) => {
             body: JSON.stringify(note)
         }
         // fetch made to nested url to create relationship with note and the correct graph
-        fetch(`http://localhost:3001/graphs/${note.graph_id}/notes`, dispatchData)
+        fetch(`https://parser-backend-api.herokuapp.com/graphs/${note.graph_id}/notes`, dispatchData)
         .then(function(response) {
             return response.json()
         })
@@ -51,7 +51,7 @@ export function  addQuestion(question) {
             body: JSON.stringify(question)
         }
 
-        fetch(`http://localhost:3001/graphs/${question.graph_id}/questions`, dispatchData)
+        fetch(`https://parser-backend-api.herokuapp.com/graphs/${question.graph_id}/questions`, dispatchData)
         .then(function(response) {
             return response.json()
         })
