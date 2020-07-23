@@ -16,16 +16,7 @@ import Container from 'react-bootstrap/Container'
 
 // adding a container and navbar that will be static to every page.
 class App extends Component {
-    componentDidMount() {
-        (function() {
-          var gcse = document.createElement('script')
-          gcse.type = 'text/javascript'
-          gcse.sync = true
-          gcse.src = 'https://cse.google.com/cse.js?cx=012056199083638932151:g7nct1fc1mb'
-          var s = document.getElementsByTagName('script')[0]
-          s.parentNode.insertBefore(gcse, s)
-        })();
-    }
+
         
 
     render() {

@@ -17,7 +17,16 @@ import { connect } from 'react-redux'
 
 class DataSourceInput extends Component {
     // initial state store and key for visiblity rendering
-
+    componentDidMount() {
+        (function() {
+          var gcse = document.createElement('script')
+          gcse.type = 'text/javascript'
+          gcse.sync = true
+          gcse.src = 'https://cse.google.com/cse.js?cx=012056199083638932151:g7nct1fc1mb'
+          var s = document.getElementsByTagName('script')[0]
+          s.parentNode.insertBefore(gcse, s)
+        })();
+    }
     
 
     state = {
